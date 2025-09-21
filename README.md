@@ -8,36 +8,39 @@ A Telegram bot that automates **searching and filtering items on Vinted** with:
 
 ---
 
+## Demo
+![demo-gif](https://github.com/user-attachments/assets/4ba99247-2a08-4afe-86c1-a61e7d5bb1a5)
+
+---
+
 ## Features
 - **Telegram commands**:
   - `/search` start a manual search
   - `/settime HH:MM ...` set schedule times
   - `/clear` clear the seen items list
 - **Keyboard shortcuts** for easy interaction (`🔎Search`, `🗑️Clear seen.json`, `🕑Set schedule`)
-- **Scheduler** that automatically checks Vinted at defined times
-- **AI filtering** using a custom FastAI model to detect specific clothing
-- **Persistence** of schedule and seen items in JSON files
-- **Access control** (only allowed user can trigger main actions)
+- **Scheduled searches** with automatic checks
+- **AI-powered filtering** with a custom FastAI model
+- **Persistent storage** of seen items and schedules
+- **Access control**: only allowed users can trigger main actions
+- **Bypass Vinted blocks**: Unlike direct `requests` (which often return 403 Forbidden), this bot uses a real browser session with your logged-in account to reliably fetch items
+---
+## Tech Overview
+
+### Highlights
+- 💬 **Telegram Bot Automation**: On-demand and scheduled searches
+- 🌐 **Robust Data Access**: Reliable scraping and API calls from Vinted
+- 🕵️ **Selenium Integration**: Uses undetected_chromedriver for stealth sessions
+- 📡 **HTTP Requests**: Fetches JSON data efficiently
+- 🤖 **AI Clothing Detection**: FastAI model for image classification
+- 💾 **Persistence**: Stores user and schedule data in JSON
   
-
----
-## Technical Highlights
-
-- **Telegram Bot Automation**: On-demand and scheduled searches via Telegram commands.
-- **Robust Data Access**: Retrieves data from Vinted reliably under standard access limitations.
-- **Selenium Integration**: Uses `undetected_chromedriver` to interact with the website in a way that emulates a real user login session.
-- **HTTP Requests**: Fetches JSON data programmatically from publicly available endpoints for efficient processing.
-- **AI Filtering**: Processes images using a custom FastAI model to select specific clothing items.
-- **JSON-based Persistence**: Stores seen items and schedule times for continuous tracking.
-- **Access Control**: Only authorized users can trigger the main bot actions.
----
-
-## Tech Stack
-- [Python 3.10+](https://www.python.org/)
-- [Aiogram](https://docs.aiogram.dev/) (Telegram bot framework)
-- [Selenium + undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) (bypass anti-bot)
-- [FastAI](https://docs.fast.ai) (vision model for clothing recognition)
-- [Requests](https://docs.python-requests.org/) (Telegram API calls)
+### Tech Stack
+- 🐍 [Python 3.10+]  
+- 💬 [Aiogram](https://docs.aiogram.dev/) - Telegram bot framework  
+- 🌐 [Selenium](https://www.selenium.dev/) + [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) - bypass anti-bot  
+- 🤖 [FastAI](https://docs.fast.ai) - vision model for clothing recognition  
+- 📡 [Requests](https://docs.python-requests.org/) - API calls  
 
 ---
 
@@ -48,7 +51,7 @@ To use this bot, you need to set up your environment, Chrome profile, and Vinted
 ### 1. Clone the repository and install dependencies
 
 ```bash
-git clone https://github.com/yourusername/vinted-ai-bot.git
+git clone https://github.com/ortxdevelop/vinted-ai-bot.git
 cd vinted-ai-bot
 pip install -r requirements.txt
 ```
@@ -105,3 +108,13 @@ python train.py
 
 The exported model (`big_pony_model.pkl`) is used by the bot to classify clothing items fetched from Vinted.
 Place the file in the project root or specify the path in your bot configuration
+
+---
+
+## Contact
+Created by [ortxdevelop](https://github.com/ortxdevelop)  
+For questions or support, please open an issue on GitHub
+
+---
+
+**Thank you for checking out this project!** 👾
