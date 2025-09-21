@@ -36,7 +36,7 @@ A Telegram bot that automates **searching and filtering items on Vinted** with:
 - 💾 **Persistence**: Stores user and schedule data in JSON
   
 ### Tech Stack
-- 🐍 [Python 3.10+]  
+- 🐍 [Python 3.10+](https://www.python.org/)
 - 💬 [Aiogram](https://docs.aiogram.dev/) - Telegram bot framework  
 - 🌐 [Selenium](https://www.selenium.dev/) + [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) - bypass anti-bot  
 - 🤖 [FastAI](https://docs.fast.ai) - vision model for clothing recognition  
